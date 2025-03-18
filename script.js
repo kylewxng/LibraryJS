@@ -9,6 +9,7 @@ function Book(title, author, pages, read) {
 }
 
 Book.prototype.toggleReadStatus = function() {
+    const card = document.querySelectorAll
     this.read = !this.read;
 };
 
@@ -30,7 +31,8 @@ function displayBooks() {
         const book = myLibrary[i];
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
-
+        bookCard.style.backgroundColor = book.read ? "rgb(161, 235, 161)" : "rgb(241, 120, 120)";
+        
         bookCard.innerHTML = `<div class="card-content">
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
